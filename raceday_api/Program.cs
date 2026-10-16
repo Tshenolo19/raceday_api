@@ -34,3 +34,11 @@ builder.Services.AddSession(options =>
         CookieSecurePolicy.Always;
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
+
+app.UseHttpsRedirection();
+
+app.UseSession();
+
+app.UseAuthorization();
+
+app.MapControllers();
